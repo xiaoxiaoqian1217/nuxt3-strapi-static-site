@@ -2,12 +2,16 @@
   "private": true,
   "scripts": {
     "build": "nuxt build",
-    "dev": "nuxt dev",
+    "start": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
+    "@nuxtjs/apollo": "^5.0.0-alpha.5",
+    "@nuxtjs/strapi": "^1.6.3",
+    "graphql": "^16.6.0",
+    "graphql-tag": "^2.12.6",
     "nuxt": "3.0.0"
   }
 }

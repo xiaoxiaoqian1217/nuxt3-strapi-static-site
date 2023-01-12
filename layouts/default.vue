@@ -32,8 +32,7 @@ const {
     data: { siteHeader, footer },
   },
 } = data;
-const { Seo } = removeAttrsAndId(removeTime(SeoData.value))?.pages?.data[0];
-console.log('%c [ Seo ]-36', 'font-size:13px; background:pink; color:#bf2c9f;', Seo)
+const { Seo = {} } = SeoData?.value && removeAttrsAndId(removeTime(SeoData.value))?.pages?.data[0] || {};
 useHead({
   title: Seo?.metaTitle,
 

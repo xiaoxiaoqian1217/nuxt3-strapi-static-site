@@ -1,0 +1,1 @@
+import{a as t,b as n,h as s,x as a,o as c,y as r}from"./entry.b20c249d.js";const _={};function l(e,u){const o=r;return c(),n("div",null,[s(o),a(e.$slots,"default")])}const f=t(_,[["render",l]]);export{f as default};

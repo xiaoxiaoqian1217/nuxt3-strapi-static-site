@@ -1,4 +1,4 @@
-name: Github Pages
+name:  deploy-tencent
 
 # Controls when the workflow will run
 on:

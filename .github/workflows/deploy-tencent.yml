@@ -30,10 +30,26 @@ jobs:
           node-version: "16"
       - run: npm ci
       - run: npm run generate
+      - name: Upload production-ready build files
+        uses: actions/upload-artifact@v2
+        with:
+          name: production-files
+          path: ./dist
+  # 部署到腾讯云
+  deploy:
+    name: Deploy
+    needs: publish
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
 
-       # 部署到腾讯云
+    steps:
+      - name: Download artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: production-files
+          path: ./dist
       - name: Deploy to Tencent Cloud
-        uses: easingthemes/ssh-deploy@v2.1.1
+        uses: easingthemes/ssh-deploy@2.1.1
         env:
           # 私钥
           SSH_PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}

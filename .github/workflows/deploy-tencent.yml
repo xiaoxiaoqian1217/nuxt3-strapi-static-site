@@ -34,7 +34,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: production-files
-          path: ./output/public
+          path: ./.output/public
   # 部署到腾讯云
   deploy:
     name: Deploy
@@ -47,7 +47,7 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: production-files
-          path: ./output/public
+          path: ./.output/public
       - name: Deploy to Tencent Cloud
         uses: easingthemes/ssh-deploy@v2.1.1
         env:

@@ -49,7 +49,7 @@ jobs:
           name: production-files
           path: ./output/public
       - name: Deploy to Tencent Cloud
-        uses: easingthemes/ssh-deploy@2.1.1
+        uses: easingthemes/ssh-deploy@v2.1.1
         env:
           # 私钥
           SSH_PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
